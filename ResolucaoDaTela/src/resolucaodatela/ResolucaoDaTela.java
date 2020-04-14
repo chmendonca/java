@@ -5,6 +5,7 @@
  * @author Cassio - 09Apr2020
  * help: http://alvinalexander.com/blog/post/jfc-swing/how-determine-get-screen-size-java-swing-app/
  */
+
 package resolucaodatela;
 
 import java.awt.Dimension;
