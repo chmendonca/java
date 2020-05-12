@@ -9,3 +9,9 @@
 /IdiomaDoSistema/build/
 /ResolucaoDaTela/build/
 /OlaMundoSwing/dist/
+*.prefs
+*.class
+coursera/OrientacaoObjetosComJava/aula01/carros/.classpath
+coursera/OrientacaoObjetosComJava/aula01/carros/.project
+*.prefs
+*.prefs
