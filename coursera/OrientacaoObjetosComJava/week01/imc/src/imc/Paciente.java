@@ -1,3 +1,11 @@
+/*
+ * Author: CASSIO HENRIQUE MENDONCA
+ * Date: May 13th, 2020
+ * Course: Orientação a objetos com Java
+ * Week: 3 (optional homework)
+ * Obs.: based on homework from first week
+ */
+
 package imc;
 
 public class Paciente {
@@ -43,6 +51,7 @@ public class Paciente {
 		}
 		else {diagnostic = "Obesidade grau III (obesidade mórbida)";
 		}
+		System.out.println("The diagnostic is: "+ diagnostic + ".");
 		return diagnostic;
 	}
 }
