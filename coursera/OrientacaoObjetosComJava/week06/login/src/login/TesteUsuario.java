@@ -25,6 +25,7 @@ public class TesteUsuario {
 	public void loginSemSucesso() throws LoginException {
 		Autenticador a = new Autenticador();
 		Usuario u = a.logar("Cassio", "senhaErradaCassio");
+		System.out.println(u.getLogin());
 		assertEquals("Cassio",u.getLogin());
 	}
 
