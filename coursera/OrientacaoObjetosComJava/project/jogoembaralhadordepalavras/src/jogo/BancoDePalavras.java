@@ -13,17 +13,25 @@ import java.util.Random;
 
 public class BancoDePalavras {
 
+/*  //quarentena + Java
 	private String bancoDePalavras[] = {"quarentena","isolamento","apartamento","distância","computador",
 			"programação","água","exceção","testes","construtor",
 			"público","privado","protegido","padrão","final",
 			"super","classe","colaboração","eclipse","objetos"};
+*/
+	
+	//frutas
+	private String bancoDePalavras[] = {"Maçã","Banana","Damasco","Mirtilo","Amora",
+			"Framboesa","Cereja","Figo","Limão","Melão",
+			"Laranja","Mamão","Abacaxi","Ameixa","Romã",
+			"Pêra","Pêssego","Melancia","Uvas","Tâmara"};
 
 	public String getPalavra() {
 		Random random = new Random();
 		String palavra = new String(); //This returns a new object and doesn't affect the original object
 		int indice = random.nextInt(bancoDePalavras.length);
 		palavra = bancoDePalavras[indice];
-		System.out.println(indice + ", " + palavra.toUpperCase());
+		//System.out.println(indice + ", " + palavra.toUpperCase());
 		return palavra.toUpperCase();
 	}
 	

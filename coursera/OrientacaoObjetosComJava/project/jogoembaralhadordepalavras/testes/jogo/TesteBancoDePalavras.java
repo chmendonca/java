@@ -42,103 +42,103 @@ public class TesteBancoDePalavras {
 	}
 
 	@Test
-	public void p0() throws Exception {
-		assertEquals("quarentena".toUpperCase(),palavraEscolhida);
+	public void fruta0() throws Exception {
+		assertEquals("Maçã".toUpperCase(),palavraEscolhida);
 	}
 
 	@Test
-	public void p1() throws Exception {
-		assertEquals("isolamento".toUpperCase(),palavraEscolhida);
+	public void fruta1() throws Exception {
+		assertEquals("Banana".toUpperCase(),palavraEscolhida);
 	}
 
 	@Test
-	public void p2() throws Exception {
-		assertEquals("apartamento".toUpperCase(),palavraEscolhida);
+	public void fruta2() throws Exception {
+		assertEquals("Damasco".toUpperCase(),palavraEscolhida);
 	}
 
 	@Test
-	public void p3() throws Exception {
-		assertEquals("distância".toUpperCase(),palavraEscolhida);
+	public void fruta3() throws Exception {
+		assertEquals("Mirtilo".toUpperCase(),palavraEscolhida);
 	}
 
 	@Test
-	public void p4() throws Exception {
-		assertEquals("computador".toUpperCase(),palavraEscolhida);
+	public void fruta4() throws Exception {
+		assertEquals("Amora".toUpperCase(),palavraEscolhida);
 	}
 
 	@Test
-	public void p5() throws Exception {
-		assertEquals("programação".toUpperCase(),palavraEscolhida);
+	public void fruta5() throws Exception {
+		assertEquals("Framboesa".toUpperCase(),palavraEscolhida);
 	}
 
 	@Test
-	public void p6() throws Exception {
-		assertEquals("água".toUpperCase(),palavraEscolhida);
+	public void fruta6() throws Exception {
+		assertEquals("Cereja".toUpperCase(),palavraEscolhida);
 	}
 
 	@Test
-	public void p7() throws Exception {
-		assertEquals("exceção".toUpperCase(),palavraEscolhida);
+	public void fruta7() throws Exception {
+		assertEquals("Figo".toUpperCase(),palavraEscolhida);
 	}
 
 	@Test
-	public void p8() throws Exception {
-		assertEquals("testes".toUpperCase(),palavraEscolhida);
+	public void fruta8() throws Exception {
+		assertEquals("Limão".toUpperCase(),palavraEscolhida);
 	}
 
 	@Test
-	public void p9() throws Exception {
-		assertEquals("construtor".toUpperCase(),palavraEscolhida);
+	public void fruta9() throws Exception {
+		assertEquals("Melão".toUpperCase(),palavraEscolhida);
 	}
 
 	@Test
-	public void p10() throws Exception {
-		assertEquals("público".toUpperCase(),palavraEscolhida);
+	public void fruta10() throws Exception {
+		assertEquals("Laranja".toUpperCase(),palavraEscolhida);
 	}
 
 	@Test
-	public void p11() throws Exception {
-		assertEquals("privado".toUpperCase(),palavraEscolhida);
+	public void fruta11() throws Exception {
+		assertEquals("Mamão".toUpperCase(),palavraEscolhida);
 	}
 
 	@Test
-	public void p12() throws Exception {
-		assertEquals("protegido".toUpperCase(),palavraEscolhida);
+	public void fruta12() throws Exception {
+		assertEquals("Abacaxi".toUpperCase(),palavraEscolhida);
 	}
 
 	@Test
-	public void p13() throws Exception {
-		assertEquals("padrão".toUpperCase(),palavraEscolhida);
+	public void fruta13() throws Exception {
+		assertEquals("Ameixa".toUpperCase(),palavraEscolhida);
 	}
 
 	@Test
-	public void p14() throws Exception {
-		assertEquals("final".toUpperCase(),palavraEscolhida);
+	public void fruta14() throws Exception {
+		assertEquals("Romã".toUpperCase(),palavraEscolhida);
 	}
 
 	@Test
-	public void p15() throws Exception {
-		assertEquals("super".toUpperCase(),palavraEscolhida);
+	public void fruta15() throws Exception {
+		assertEquals("Pêra".toUpperCase(),palavraEscolhida);
 	}
 
 	@Test
-	public void p16() throws Exception {
-		assertEquals("classe".toUpperCase(),palavraEscolhida);
+	public void fruta16() throws Exception {
+		assertEquals("Pêssego".toUpperCase(),palavraEscolhida);
 	}
 
 	@Test
-	public void p17() throws Exception {
-		assertEquals("colaboração".toUpperCase(),palavraEscolhida);
+	public void fruta17() throws Exception {
+		assertEquals("Melancia".toUpperCase(),palavraEscolhida);
 	}
 
 	@Test
-	public void p18() throws Exception {
-		assertEquals("eclipse".toUpperCase(),palavraEscolhida);
+	public void fruta18() throws Exception {
+		assertEquals("Uvas".toUpperCase(),palavraEscolhida);
 	}
 
 	@Test
-	public void p19() throws Exception {
-		assertEquals("objetos".toUpperCase(),palavraEscolhida);
+	public void fruta19() throws Exception {
+		assertEquals("Tâmara".toUpperCase(),palavraEscolhida);
 	}
 
 }

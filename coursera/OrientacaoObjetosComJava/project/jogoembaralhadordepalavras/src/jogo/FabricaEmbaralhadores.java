@@ -11,26 +11,41 @@
 
 package jogo;
 
+import java.util.HashMap;
 import java.util.Random;
 
 public class FabricaEmbaralhadores {
 	
+	private String palavra;
+	private String palavraEmbaralhada;
+	private HashMap<String,String> palavras = new HashMap<String,String>();
+	
 	BancoDePalavras bp = new BancoDePalavras();
-	protected String palavra;
 	
 	public FabricaEmbaralhadores() {
 		super();
 		this.palavra = bp.getPalavra();
 	}
 
-	public void qualEmbaralhador () {
+	private String qualEmbaralhador () {
 		Random random = new Random();
 		int opcao = random.nextInt(2);
 		if (opcao == 0) {
-			System.out.println("0");			
+			//System.out.println("Sequencial");
+			EmbaralhadorSequencial es = new EmbaralhadorSequencial();
+			palavraEmbaralhada = es.getPalavraEmbaralhada(this.palavra);
 		} else if (opcao == 1){
-			System.out.println("1");
+			//System.out.println("Shuffle");
+			EmbaralhadorShuffle es = new EmbaralhadorShuffle();
+			palavraEmbaralhada = es.getPalavraEmbaralhada(this.palavra);
 		}
+		return palavraEmbaralhada;
 	}
-
-}
+	
+	public HashMap<String,String> getPalavraEmbaralhada() {
+		qualEmbaralhador();
+		palavras.put(this.palavra,palavraEmbaralhada);
+		//System.out.println(palavras);
+		return palavras;
+	}
+}	
