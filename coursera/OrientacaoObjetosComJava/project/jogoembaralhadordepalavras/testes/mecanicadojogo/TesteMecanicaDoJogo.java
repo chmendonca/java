@@ -1,8 +1,6 @@
-package jogo;
+package mecanicadojogo;
 
 import static org.junit.Assert.*;
-
-import java.io.IOException;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -10,15 +8,14 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import mecanicadojogo.FabricaMecanicaDoJogo;
+import mecanicadojogo.MecanicaDoJogo;
 
-public class TestePrincipal {
+public class TesteMecanicaDoJogo {
 	
-	static FabricaMecanicaDoJogo fmj;
+	MecanicaDoJogo mj;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		fmj = new FabricaMecanicaDoJogo();
 	}
 
 	@AfterClass
@@ -27,6 +24,7 @@ public class TestePrincipal {
 
 	@Before
 	public void setUp() throws Exception {
+		mj = new MecanicaDoJogo();
 	}
 
 	@After
@@ -34,9 +32,15 @@ public class TestePrincipal {
 	}
 
 	@Test
-	public void escolhendoJogoSairContinuar() {
+	public void imprimirPalavraEmbaralhada() {
+	}
 
-		
+	@Test
+	public void escolha2() {
+	}
+
+	@Test
+	public void escolha3() {
 	}
 
 }

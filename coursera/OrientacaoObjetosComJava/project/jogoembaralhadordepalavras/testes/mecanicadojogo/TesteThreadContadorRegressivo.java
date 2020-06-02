@@ -1,8 +1,6 @@
-package jogo;
+package mecanicadojogo;
 
 import static org.junit.Assert.*;
-
-import java.io.IOException;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -10,15 +8,14 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import mecanicadojogo.FabricaMecanicaDoJogo;
+import mecanicadojogo.ThreadContadorRegressivo;
 
-public class TestePrincipal {
+public class TesteThreadContadorRegressivo {
 	
-	static FabricaMecanicaDoJogo fmj;
+	public ThreadContadorRegressivo tcr;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		fmj = new FabricaMecanicaDoJogo();
 	}
 
 	@AfterClass
@@ -34,8 +31,7 @@ public class TestePrincipal {
 	}
 
 	@Test
-	public void escolhendoJogoSairContinuar() {
-
+	public void test() {
 		
 	}
 
