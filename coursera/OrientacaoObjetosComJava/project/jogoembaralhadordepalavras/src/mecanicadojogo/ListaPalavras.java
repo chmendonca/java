@@ -15,7 +15,7 @@ import java.util.HashMap;
 
 import embaralhador.FabricaEmbaralhadores;
 
-public class ListaPalavras implements RegrasListaPalavras {
+public class ListaPalavras {
 	
 	private int increment = 0;
 	private String palavra;
@@ -24,7 +24,7 @@ public class ListaPalavras implements RegrasListaPalavras {
 	private HashMap<String,String> conjunto; //Este é o par de palavras retornado de FabricaEmbaralhadores
 	protected HashMap<String,String> dicionario = new HashMap<String,String>(); //Este é o dicionario de palavras que será montado para ser apresentado ao jogador
 	
-	public HashMap<String,String> criarDicionarioPalavrasEmbaralhadas(int quantidadeDePalavras) {
+	protected HashMap<String,String> criarDicionarioPalavrasEmbaralhadas(int quantidadeDePalavras) {
 		while (increment < quantidadeDePalavras) {
 			fe = new FabricaEmbaralhadores();
 			conjunto = fe.getPalavraEmbaralhada();

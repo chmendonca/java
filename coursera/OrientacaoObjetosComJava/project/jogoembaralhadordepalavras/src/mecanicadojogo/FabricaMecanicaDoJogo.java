@@ -11,7 +11,7 @@ package mecanicadojogo;
 
 import java.util.HashMap;
 
-public class FabricaMecanicaDoJogo {
+public class FabricaMecanicaDoJogo implements RegrasMecanicaDoJogo {
 	
 	MecanicaDoJogo mj = new MecanicaDoJogo();
 

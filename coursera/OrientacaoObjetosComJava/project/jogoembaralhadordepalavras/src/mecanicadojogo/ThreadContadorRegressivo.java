@@ -31,7 +31,7 @@ public class ThreadContadorRegressivo implements Runnable{
 	private static boolean terminouContagem = false;
 	public boolean finalizar = false; 
 	
-	public ThreadContadorRegressivo(int tempoDoJogo) {
+	protected ThreadContadorRegressivo(int tempoDoJogo) {
 		super();
 		this.tempoDoJogo = tempoDoJogo;
 	}

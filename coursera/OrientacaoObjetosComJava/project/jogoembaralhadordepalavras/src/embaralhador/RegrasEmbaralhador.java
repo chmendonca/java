@@ -11,9 +11,10 @@
 
 package embaralhador;
 
+import java.util.HashMap;
+
 public interface RegrasEmbaralhador {
 
-	public String embaralhar (String palavra);
-	public String getPalavraEmbaralhada (String palavra);
+	public HashMap<String,String> getPalavraEmbaralhada();
 
 }

@@ -12,9 +12,12 @@
 package embaralhador;
 
 import java.util.Calendar;
-import java.util.Random;
+
+//import java.util.Random;
 
 public class BancoDePalavras {
+	
+	private String bancoDePalavras[];
 	
 	
 /*  //quarentena + Java
@@ -25,10 +28,10 @@ public class BancoDePalavras {
 */
 	
 	//frutas
-	private String bancoDePalavras[] = {"Maçã","Banana","Damasco","Mirtilo","Amora",
+	private String bancoDeFrutas[] = {"Maçã","Banana","Damasco","Mirtilo","Amora",
 			"Framboesa","Cereja","Figo","Limão","Melão", //10
 			"Laranja","Mamão","Abacaxi","Ameixa","Romã",
-			"Pêra","Pêssego","Melancia","Uvas","Tâmara", //20
+			"Pêra","Pêssego","Melancia","Uva","Tâmara", //20
 			"Abacate","Acerola","Açaí","Graviola","Jaca",
 			"Manga","Jabuticaba","Pequi","Mexerica","Pitaia", //30
 			"Pitanga","Cajá","Caju","Caqui","Carambola",
@@ -36,8 +39,20 @@ public class BancoDePalavras {
 			"Guaraná","Jambo","Jenipapo","Kiwi","Lichia",
 			"Maracujá","Marmelo","Morango","Nectarina","Umbu", //50
 			"Tamarindo"}; 
+	
+	protected String[] getBancoDePalavras() {
+		//Foi criada a variável bancoDePalavras para que o sistema tenha acesso a uma cópia da lista de palavras e possa
+		// fazer uso desta cópia, sem afetar o array original. Isto permitirá que o qualquer novo conjunto de palavras
+		// seja associado à mesma variável, facilitando o reuso interno e o acesso externo.
+		bancoDePalavras = bancoDeFrutas;
+		
+		return bancoDePalavras;
+	}
+
+
 
 	protected String getPalavra() {
+		
 		//Se utilizar a classe "Random random = new Random();" a sequencia de palavras sempre será a mesma porque 
 		// a seed desta função é fixa
 		//Random random = new Random();
@@ -51,13 +66,16 @@ public class BancoDePalavras {
 		Calendar calendar = Calendar.getInstance();
 		int segundo = calendar.get(Calendar.SECOND);
 		int seed = segundo/6;
-		int indice = seed + (int)(Math.random() * bancoDePalavras.length-seed);		
+		
+		getBancoDePalavras();		
+		
+		int indice = seed + (int)(Math.random() * (bancoDePalavras.length-seed));		
 		
 		String palavra = new String(); //This returns a new object and doesn't affect the original object
-		palavra = bancoDePalavras[indice];
+		palavra = bancoDePalavras[indice]; //This gets the word with the aleatory indice
 		//System.out.println(indice + ", " + palavra.toUpperCase());
 		
-		return palavra.toUpperCase();
+		return palavra.toUpperCase(); //The upper case was chosen as a pattern
 	}
 	
 }

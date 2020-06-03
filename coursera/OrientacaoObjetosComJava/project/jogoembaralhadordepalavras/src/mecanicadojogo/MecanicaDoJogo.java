@@ -21,7 +21,7 @@ package mecanicadojogo;
 import java.util.HashMap;
 import java.util.Scanner;
 
-public class MecanicaDoJogo implements RegrasMecanicaDoJogo {
+public class MecanicaDoJogo {
 	
 
 	private int passo = 0;
@@ -52,7 +52,7 @@ public class MecanicaDoJogo implements RegrasMecanicaDoJogo {
 		super();
 	}
 
-	public boolean validarEscolhaDoJogador(String escolha) {
+	protected boolean validarEscolhaDoJogador(String escolha) {
 		//precisa ter as opções de 1 e 2 porque valores inválidos são entendidos como pedido de saída do jogo.
 		if (escolha.equals("1") || escolha.equals("2")) {
 			return true;
@@ -61,7 +61,7 @@ public class MecanicaDoJogo implements RegrasMecanicaDoJogo {
 		}
 	}
 	
-	public void iniciarJogo(String escolha){
+	protected void iniciarJogo(String escolha){
 		if (escolha.equals("1")) {
 			listaPalavras = lp.criarDicionarioPalavrasEmbaralhadas(quantidadePalavrasModo1);
 			modo = "Normal";
@@ -80,7 +80,7 @@ public class MecanicaDoJogo implements RegrasMecanicaDoJogo {
 			break;
 		}
 	}
-	public String imprimirPalavraEmbaralhada() {
+	protected String imprimirPalavraEmbaralhada() {
 		if (modo == "Normal") {
 			if (passo < quantidadePalavrasModo1) {
 				imprimePrimeiraPalavraDaLista();
@@ -120,7 +120,7 @@ public class MecanicaDoJogo implements RegrasMecanicaDoJogo {
 		return imprimir;
 	}
 	
-	public boolean compararPalavras(String resposta) {
+	protected boolean compararPalavras(String resposta) {
 		if (palavra.equalsIgnoreCase(resposta)) {
 			respostaCerta = true;
 			listaPalavrasCertas.put(palavraEmbaralhada, palavra);
@@ -136,7 +136,7 @@ public class MecanicaDoJogo implements RegrasMecanicaDoJogo {
 		return respostaCerta;
 	}
 	
-	public int pontuarRodada() {
+	protected int pontuarRodada() {
 		if (modo == "Normal") {
 			if (respostaCerta) {
 				pontosRodada = 5;
@@ -156,7 +156,7 @@ public class MecanicaDoJogo implements RegrasMecanicaDoJogo {
 		return pontosRodada;
 	}
 	
-	public int pontuarJogo() {
+	protected int pontuarJogo() {
 		pontosTotais += somatorioPontos[0]+pontosRodada;
 		//System.out.println("pontuarJogo: "+pontosTotais);
 		return pontosTotais;

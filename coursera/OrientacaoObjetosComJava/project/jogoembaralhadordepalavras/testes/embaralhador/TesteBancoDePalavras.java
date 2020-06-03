@@ -4,12 +4,16 @@
  * Course: Orientação a objetos com Java
  * Week: 6 (course final project)
  * Release Changes: first release
- * Comments: This is a basic test sequence. Since the word is aleatory, only one test case will pass (for choosen word).
+ * Comments: On this test case it is verified that the seed is correctly generated from the range of seconds.
+ *  Thus, it was created a for loop to generate all possible seconds has been done the assertion to the 
+ *  related integer on division. Since the word is aleatory, only one test case will pass (for choosen word).
  */
 
 package embaralhador;
 
 import static org.junit.Assert.*;
+
+import java.util.Calendar;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -17,18 +21,33 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import embaralhador.BancoDePalavras;
-
 public class TesteBancoDePalavras {
 
 	static BancoDePalavras bp;
 	private static String palavraEscolhida;
 
+	static int segundo;
+	static int seed;
+	static int indice;
+
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
+		//O objeto bp é criado somente uma vez porque a idéia é verificar se a palavra escolhida é uma das palavras da lista.
+		// O teste irá falhar pois somente uma das palavras é que vai coincidir o assert. Se fosse criado uma nova instância
+		// antes de cada teste, era possível que nenhuma das palavras fossem escolhidas pois teria que coincidir a palavra
+		// escolhida com o respectivo teste.
 		
 		bp = new BancoDePalavras();
 		palavraEscolhida = bp.getPalavra();
+		
+		//Calendar calendar = Calendar.getInstance();
+		//segundo = calendar.get(Calendar.SECOND);
+		//seed = segundo/6;
+		//indice = seed + (int)(Math.random() * (bp.bancoDePalavras.length-seed));		
+		
+		//String palavra = new String(); //This returns a new object and doesn't affect the original object
+		//palavra = bp.bancoDePalavras[indice];
+		//System.out.println(indice + ", " + palavra.toUpperCase());
 	}
 
 	@AfterClass
@@ -41,6 +60,36 @@ public class TesteBancoDePalavras {
 
 	@After
 	public void tearDown() throws Exception {
+	}
+
+	@Test
+	public void seed() throws Exception {
+		//Este teste não dependo do @BeforeClass. Este teste verifica se a lógica para escolher a seed é válida.
+		for (segundo = 0; segundo <= 59; segundo++) {
+			seed = segundo/6;
+			if (segundo >= 0 && segundo < 6) {
+				assertEquals(0,seed);
+			} else if (segundo >= 6 && segundo < 12) {
+				assertEquals(1,seed);
+			} else if (segundo >= 12 && segundo < 18) {
+				assertEquals(2,seed);
+			} else if (segundo >= 18 && segundo < 24) {
+				assertEquals(3,seed);
+			} else if (segundo >= 24 && segundo < 30) {
+				assertEquals(4,seed);
+			} else if (segundo >= 30 && segundo < 36) {
+				assertEquals(5,seed);
+			} else if (segundo >= 36 && segundo < 42) {
+				assertEquals(6,seed);
+			} else if (segundo >= 42 && segundo < 48) {
+				assertEquals(7,seed);
+			} else if (segundo >= 48 && segundo < 54) {
+				assertEquals(8,seed);
+			} else if (segundo >= 54 && segundo < 59) {
+				assertEquals(9,seed);
+			}
+			System.out.println("segundo: " + segundo + ", seed: " + seed);
+		}
 	}
 
 	@Test
@@ -143,4 +192,158 @@ public class TesteBancoDePalavras {
 		assertEquals("Tâmara".toUpperCase(),palavraEscolhida);
 	}
 
+	@Test
+	public void fruta20() throws Exception {
+		assertEquals("Abacate".toUpperCase(),palavraEscolhida);
+	}
+
+	@Test
+	public void fruta21() throws Exception {
+		assertEquals("Acerola".toUpperCase(),palavraEscolhida);
+	}
+
+	@Test
+	public void fruta22() throws Exception {
+		assertEquals("Açaí".toUpperCase(),palavraEscolhida);
+	}
+
+	@Test
+	public void fruta23() throws Exception {
+		assertEquals("Graviola".toUpperCase(),palavraEscolhida);
+	}
+
+	@Test
+	public void fruta24() throws Exception {
+		assertEquals("Jaca".toUpperCase(),palavraEscolhida);
+	}
+
+	@Test
+	public void fruta25() throws Exception {
+		assertEquals("Manga".toUpperCase(),palavraEscolhida);
+	}
+
+	@Test
+	public void fruta26() throws Exception {
+		assertEquals("Jabuticaba".toUpperCase(),palavraEscolhida);
+	}
+
+	@Test
+	public void fruta27() throws Exception {
+		assertEquals("Pequi".toUpperCase(),palavraEscolhida);
+	}
+
+	@Test
+	public void fruta28() throws Exception {
+		assertEquals("Mexerica".toUpperCase(),palavraEscolhida);
+	}
+
+	@Test
+	public void fruta29() throws Exception {
+		assertEquals("Pitaia".toUpperCase(),palavraEscolhida);
+	}
+
+	@Test
+	public void fruta30() throws Exception {
+		assertEquals("Pitanga".toUpperCase(),palavraEscolhida);
+	}
+
+	@Test
+	public void fruta31() throws Exception {
+		assertEquals("Cajá".toUpperCase(),palavraEscolhida);
+	}
+
+	@Test
+	public void fruta32() throws Exception {
+		assertEquals("Caju".toUpperCase(),palavraEscolhida);
+	}
+
+	@Test
+	public void fruta33() throws Exception {
+		assertEquals("Caqui".toUpperCase(),palavraEscolhida);
+	}
+
+	@Test
+	public void fruta34() throws Exception {
+		assertEquals("Carambola".toUpperCase(),palavraEscolhida);
+	}
+	@Test
+	public void fruta35() throws Exception {
+		assertEquals("Seriguela".toUpperCase(),palavraEscolhida);
+	}
+
+	@Test
+	public void fruta36() throws Exception {
+		assertEquals("Coco".toUpperCase(),palavraEscolhida);
+	}
+
+	@Test
+	public void fruta37() throws Exception {
+		assertEquals("Cupuaçu".toUpperCase(),palavraEscolhida);
+	}
+
+	@Test
+	public void fruta38() throws Exception {
+		assertEquals("Pinha".toUpperCase(),palavraEscolhida);
+	}
+
+	@Test
+	public void fruta39() throws Exception {
+		assertEquals("Goiaba".toUpperCase(),palavraEscolhida);
+	}
+
+	@Test
+	public void fruta40() throws Exception {
+		assertEquals("Guaraná".toUpperCase(),palavraEscolhida);
+	}
+
+	@Test
+	public void fruta41() throws Exception {
+		assertEquals("Jambo".toUpperCase(),palavraEscolhida);
+	}
+
+	@Test
+	public void fruta42() throws Exception {
+		assertEquals("Jenipapo".toUpperCase(),palavraEscolhida);
+	}
+
+	@Test
+	public void fruta43() throws Exception {
+		assertEquals("Kiwi".toUpperCase(),palavraEscolhida);
+	}
+
+	@Test
+	public void fruta44() throws Exception {
+		assertEquals("Lichia".toUpperCase(),palavraEscolhida);
+	}
+
+	@Test
+	public void fruta45() throws Exception {
+		assertEquals("Maracujá".toUpperCase(),palavraEscolhida);
+	}
+
+	@Test
+	public void fruta46() throws Exception {
+		assertEquals("Marmelo".toUpperCase(),palavraEscolhida);
+	}
+
+	@Test
+	public void fruta47() throws Exception {
+		assertEquals("Morango".toUpperCase(),palavraEscolhida);
+	}
+
+	@Test
+	public void fruta48() throws Exception {
+		assertEquals("Nectarina".toUpperCase(),palavraEscolhida);
+	}
+
+	@Test
+	public void fruta49() throws Exception {
+		assertEquals("Umbu".toUpperCase(),palavraEscolhida);
+	}
+
+	@Test
+	public void fruta50() throws Exception {
+		assertEquals("Tamarindo".toUpperCase(),palavraEscolhida);
+	}
+	
 }

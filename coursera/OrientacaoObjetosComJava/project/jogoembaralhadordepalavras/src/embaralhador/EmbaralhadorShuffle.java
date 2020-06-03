@@ -16,12 +16,12 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-public class EmbaralhadorShuffle implements RegrasEmbaralhador {
+public class EmbaralhadorShuffle {
 
 	private String palavraEmbaralhada = "";
 	//private char letra;	
 	
-	public String embaralhar(String palavra) {
+	private String embaralhar(String palavra) {
         List<String> pd = Arrays.asList(palavra.split(""));
         StringBuilder builder = new StringBuilder(); //Usado para agrupar as letras e depois transformá-las em palavras
         
@@ -35,18 +35,21 @@ public class EmbaralhadorShuffle implements RegrasEmbaralhador {
         return palavraEmbaralhada;
 	}
 	
-	public String getPalavraEmbaralhada(String palavra) {
+	protected String getPalavraEmbaralhada(String palavra) {
 		//Esta lógica garante que a palavra embaralhada é diferente da palavra
+		//Palavras pequenas têm grande chance de serem embaralhadas automaticamente e o resultado ser a palavra original
+		// sendo assim foi inserido um while de 3 vezes para tentar garantir que a palavra foi realmente embaralhada.
 		int i = 0;
 		embaralhar(palavra);
 		while (i < 3) {
 			if (palavra.equals(palavraEmbaralhada)) {
 				embaralhar(palavra);
+				System.out.println(palavra);
 				i++;
 			} else {
 				break;
 			}
-		}
+	}
 		
 		return palavraEmbaralhada;
 	}

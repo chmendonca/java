@@ -11,11 +11,13 @@
 
 package embaralhador;
 
-import java.util.Calendar;
+//import java.util.Calendar;
+
 import java.util.HashMap;
+
 import java.util.Random;
 
-public class FabricaEmbaralhadores {
+public class FabricaEmbaralhadores implements RegrasEmbaralhador {
 	
 	private String palavra;
 	private String palavraEmbaralhada;
@@ -24,7 +26,7 @@ public class FabricaEmbaralhadores {
 	BancoDePalavras bp = new BancoDePalavras();
 	
 	public FabricaEmbaralhadores() {
-		super();
+		//super();
 		this.palavra = bp.getPalavra(); //importa do banco de palavras uma palavra a ser embaralhada
 	}
 

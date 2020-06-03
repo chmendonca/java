@@ -13,14 +13,16 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 
-public class EmbaralhadorSequencial implements RegrasEmbaralhador {
+public class EmbaralhadorSequencial {
 
 	private String palavraEmbaralhada = "";
 	//private String letras;	
 	
-	public String embaralhar(String palavra) {
+	StringBuilder builder;
+	
+	private String embaralhar(String palavra) {
         List<String> pd = Arrays.asList(palavra.split(""));
-		StringBuilder builder = new StringBuilder(); //Usado para agrupar as letras e depois transformá-las em palavras
+		builder = new StringBuilder(); //Usado para agrupar as letras e depois transformá-las em palavras
 		
 		pd.sort(Comparator.naturalOrder());
 		
@@ -41,7 +43,7 @@ public class EmbaralhadorSequencial implements RegrasEmbaralhador {
 		return palavraEmbaralhada;
 	}
 	
-	public String getPalavraEmbaralhada(String palavra) {
+	protected String getPalavraEmbaralhada(String palavra) {
 		embaralhar(palavra);
 		return palavraEmbaralhada;
 	}
