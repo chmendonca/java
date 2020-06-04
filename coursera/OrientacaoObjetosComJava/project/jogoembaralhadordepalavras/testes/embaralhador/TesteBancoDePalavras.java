@@ -39,6 +39,7 @@ public class TesteBancoDePalavras {
 		
 		bp = new BancoDePalavras();
 		palavraEscolhida = bp.getPalavra();
+		System.out.println(palavraEscolhida);
 		
 		//Calendar calendar = Calendar.getInstance();
 		//segundo = calendar.get(Calendar.SECOND);

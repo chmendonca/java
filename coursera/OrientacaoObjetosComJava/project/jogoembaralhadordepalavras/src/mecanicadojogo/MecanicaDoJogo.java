@@ -61,6 +61,10 @@ public class MecanicaDoJogo {
 		}
 	}
 	
+	private void limpaListaPalavras() {
+		listaPalavrasCertas.clear();
+		listaPalavrasErradas.clear();
+	}
 	protected void iniciarJogo(String escolha){
 		if (escolha.equals("1")) {
 			listaPalavras = lp.criarDicionarioPalavrasEmbaralhadas(quantidadePalavrasModo1);
@@ -69,6 +73,7 @@ public class MecanicaDoJogo {
 			listaPalavras = lp.criarDicionarioPalavrasEmbaralhadas(quantidadePalavrasModo2);
 			modo = "Contra-Tempo";
 		}
+		limpaListaPalavras();
 	}
 	
 	private void imprimePrimeiraPalavraDaLista() {

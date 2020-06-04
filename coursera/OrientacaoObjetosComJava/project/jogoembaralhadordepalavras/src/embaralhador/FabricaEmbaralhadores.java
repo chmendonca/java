@@ -23,7 +23,7 @@ public class FabricaEmbaralhadores implements RegrasEmbaralhador {
 	private String palavraEmbaralhada;
 	private HashMap<String,String> palavras = new HashMap<String,String>();
 	
-	BancoDePalavras bp = new BancoDePalavras();
+	BancoDePalavrasOld bp = new BancoDePalavrasOld();
 	
 	public FabricaEmbaralhadores() {
 		//super();

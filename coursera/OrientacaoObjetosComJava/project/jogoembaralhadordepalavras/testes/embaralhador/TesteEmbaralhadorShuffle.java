@@ -23,7 +23,7 @@ import embaralhador.EmbaralhadorShuffle;
 public class TesteEmbaralhadorShuffle {
 	
 	EmbaralhadorShuffle es;
-	BancoDePalavras bp;
+	BancoDePalavrasOld bp;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -36,7 +36,7 @@ public class TesteEmbaralhadorShuffle {
 	@Before
 	public void setUp() throws Exception {
 		es = new EmbaralhadorShuffle();
-		bp = new BancoDePalavras();
+		bp = new BancoDePalavrasOld();
 	}
 
 	@After

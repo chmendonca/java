@@ -1,51 +1,57 @@
-/*
- * Author: CASSIO HENRIQUE MENDONCA
- * Date: May 30th, 2020
- * Course: Orientação a objetos com Java
- * Week: 6 (course final project)
- * Comments: This version was created using only one array of strings and is getting a random word on the array
- * How it works: It gets the second of the system time and divides by 6 getting an integer between 0 and 9. Then
- *  it sets this number as a seed for a random number that will be taken from the seed to the end of the array.
- *  It creates a new instance of the word to protect the system against inadvertent access then returns this word.
- */
-
 package embaralhador;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
-
-//import java.util.Random;
+import java.util.List;
 
 public class BancoDePalavras {
-	
-	private String bancoDePalavras[];
-	
-	
-/*  //quarentena + Java
-	private String bancoDePalavras[] = {"quarentena","isolamento","apartamento","distância","computador",
-			"programação","água","exceção","testes","construtor",
-			"público","privado","protegido","padrão","final",
-			"super","classe","colaboração","eclipse","objetos"};
-*/
-	
-	//frutas
-	private String bancoDeFrutas[] = {"Maçã","Banana","Damasco","Mirtilo","Amora",
-			"Framboesa","Cereja","Figo","Limão","Melão", //10
-			"Laranja","Mamão","Abacaxi","Ameixa","Romã",
-			"Pêra","Pêssego","Melancia","Uva","Tâmara", //20
-			"Abacate","Acerola","Açaí","Graviola","Jaca",
-			"Manga","Jabuticaba","Pequi","Mexerica","Pitaia", //30
-			"Pitanga","Cajá","Caju","Caqui","Carambola",
-			"Seriguela","Coco","Cupuaçu","Pinha","Goiaba", //40
-			"Guaraná","Jambo","Jenipapo","Kiwi","Lichia",
-			"Maracujá","Marmelo","Morango","Nectarina","Umbu", //50
-			"Tamarindo"}; 
-	
-	protected String[] getBancoDePalavras() {
-		//Foi criada a variável bancoDePalavras para que o sistema tenha acesso a uma cópia da lista de palavras e possa
-		// fazer uso desta cópia, sem afetar o array original. Isto permitirá que o qualquer novo conjunto de palavras
-		// seja associado à mesma variável, facilitando o reuso interno e o acesso externo.
-		bancoDePalavras = bancoDeFrutas;
 		
+	private List<String[]> lista = new ArrayList<>(); 
+	private String[] bancoDePalavras;
+	
+	protected String[] palavrasDoArquivo(String file) {
+		try {
+
+			FileReader fr = new FileReader(file);
+            BufferedReader br = new BufferedReader(fr);
+
+            String str;
+            while((str = br.readLine()) != null){
+                lista.add(str.split(","));
+            } 
+			br.close();
+
+		} catch(IOException e) {
+			System.out.println("Arquivo não encontrado!");
+		}
+		
+		
+		//lista.forEach(a -> System.out.println("a: " + Arrays.toString(a)));  
+		for (String[] s : lista) {
+			bancoDePalavras = s;
+			
+			//System.out.println(b.length);
+
+			//System.out.println(b[0]);	
+			//System.out.println(b[1]);
+			//System.out.println(b[5]);
+			
+			//System.out.println(Arrays.deepToString(s));
+			
+		}
+		for (int i = 0; i < bancoDePalavras.length; i++) {
+			bancoDePalavras[i] = bancoDePalavras[i].replaceAll("\"","");
+		}
+		//lista.forEach(a -> System.out.println(a));  
+		return bancoDePalavras;     
+	}
+
+	protected String[] getBancoDePalavras(String file) {
+		palavrasDoArquivo(file); //"frutas.txt"
 		return bancoDePalavras;
 	}
 
@@ -67,7 +73,7 @@ public class BancoDePalavras {
 		int segundo = calendar.get(Calendar.SECOND);
 		int seed = segundo/6;
 		
-		getBancoDePalavras();		
+		getBancoDePalavras("frutas.txt");		
 		
 		int indice = seed + (int)(Math.random() * (bancoDePalavras.length-seed));		
 		
@@ -77,5 +83,6 @@ public class BancoDePalavras {
 		
 		return palavra.toUpperCase(); //The upper case was chosen as a pattern
 	}
-	
+
+
 }

@@ -31,7 +31,7 @@ import org.junit.Test;
 public class TesteEmbaralhadorSequencial {
 	
 	EmbaralhadorSequencial es;
-	BancoDePalavras bp;
+	BancoDePalavrasOld bp;
 	StringBuilder builder;
 
 	@BeforeClass
@@ -45,7 +45,7 @@ public class TesteEmbaralhadorSequencial {
 	@Before
 	public void setUp() throws Exception {
 		es = new EmbaralhadorSequencial();
-		bp = new BancoDePalavras();
+		bp = new BancoDePalavrasOld();
 	}
 
 	@After
