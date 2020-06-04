@@ -1,3 +1,15 @@
+/*
+ * Author: CASSIO HENRIQUE MENDONCA
+ * Date: June 04th, 2020
+ * Course: Orientação a objetos com Java
+ * Week: 6 (course final project)
+ * Comments: This version was created using only one array of strings and is getting a random word on the array
+ * How it works: It imports a given text file with the words to be read. Once the file has been transformed in an
+ *  String array, it gets the second of the system time (hour) and divides by 6 getting an integer between 0 and 9.
+ *  This integer is used as seed for a random number that will be taken from the seed to the end of the array.
+ *  It creates a new instance of the word to protect the system against inadvertent access then returns this word.
+ */
+
 package embaralhador;
 
 import java.io.BufferedReader;
@@ -13,7 +25,7 @@ public class BancoDePalavras {
 	private List<String[]> lista = new ArrayList<>(); 
 	private String[] bancoDePalavras;
 	
-	protected String[] palavrasDoArquivo(String file) {
+	private String[] palavrasDoArquivo(String file) {
 		try {
 
 			FileReader fr = new FileReader(file);
@@ -26,7 +38,9 @@ public class BancoDePalavras {
 			br.close();
 
 		} catch(IOException e) {
-			System.out.println("Arquivo não encontrado!");
+			bancoDePalavras[0] = "Arquivo não encontrado!";
+			System.out.println(bancoDePalavras[0].toString());
+			
 		}
 		
 		

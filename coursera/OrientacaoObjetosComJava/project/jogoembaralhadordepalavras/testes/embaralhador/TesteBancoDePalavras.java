@@ -1,12 +1,14 @@
 /*
  * Author: CASSIO HENRIQUE MENDONCA
- * Date: May 21th, 2020
+ * Date: june 04th, 2020
  * Course: Orientação a objetos com Java
  * Week: 6 (course final project)
  * Release Changes: first release
- * Comments: On this test case it is verified that the seed is correctly generated from the range of seconds.
- *  Thus, it was created a for loop to generate all possible seconds has been done the assertion to the 
- *  related integer on division. Since the word is aleatory, only one test case will pass (for choosen word).
+ * Comments: This test case covers: the successful file import; an unsuccessful file import; if the seed 
+ *  is correctly generated from the range of seconds; and if one word has been takes correctly and the
+ *  others no. To test the seeds, it was created a for loop to generate all possible seconds has been done
+ *  the assertion to the related integer on division. Since the word is aleatory, only one test case will
+ *  pass (for choosen word).
  */
 
 package embaralhador;
@@ -39,7 +41,7 @@ public class TesteBancoDePalavras {
 		
 		bp = new BancoDePalavras();
 		palavraEscolhida = bp.getPalavra();
-		System.out.println(palavraEscolhida);
+		//System.out.println(palavraEscolhida);
 		
 		//Calendar calendar = Calendar.getInstance();
 		//segundo = calendar.get(Calendar.SECOND);
@@ -61,6 +63,16 @@ public class TesteBancoDePalavras {
 
 	@After
 	public void tearDown() throws Exception {
+	}
+	
+	@Test
+	public void abreArquivo() {
+		assertNotNull(bp.getBancoDePalavras("frutas.txt"));
+	}
+	
+	@Test
+	public void falhaAbreArquivo() throws Exception {
+		assertEquals("Arquivo não encontrado!",bp.getBancoDePalavras("_frutas.txt")[0].toString());
 	}
 
 	@Test
@@ -89,10 +101,12 @@ public class TesteBancoDePalavras {
 			} else if (segundo >= 54 && segundo < 59) {
 				assertEquals(9,seed);
 			}
-			System.out.println("segundo: " + segundo + ", seed: " + seed);
+			//System.out.println("segundo: " + segundo + ", seed: " + seed);
 		}
 	}
-
+		
+	//Os testes de palavras não possuem uma condição para identificar que a palavra não foi escolhida porque assim
+	// fica possível evidenciar qual foi escolhida. Isto evita um falso negativo.
 	@Test
 	public void fruta0() throws Exception {
 		assertEquals("Maçã".toUpperCase(),palavraEscolhida);
