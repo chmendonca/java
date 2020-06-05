@@ -40,8 +40,9 @@ public class TesteBancoDePalavras {
 		// escolhida com o respectivo teste.
 		
 		bp = new BancoDePalavras();
+		System.out.println("bp");
 		palavraEscolhida = bp.getPalavra();
-		//System.out.println(palavraEscolhida);
+		System.out.println("palavraEscolhida: " + palavraEscolhida);
 		
 		//Calendar calendar = Calendar.getInstance();
 		//segundo = calendar.get(Calendar.SECOND);
@@ -72,7 +73,8 @@ public class TesteBancoDePalavras {
 	
 	@Test
 	public void falhaAbreArquivo() throws Exception {
-		assertEquals("Arquivo não encontrado!",bp.getBancoDePalavras("_frutas.txt")[0].toString());
+		bp = new BancoDePalavras();
+		assertNull(bp.getBancoDePalavras("_frutas.txt"));
 	}
 
 	@Test
@@ -104,7 +106,7 @@ public class TesteBancoDePalavras {
 			//System.out.println("segundo: " + segundo + ", seed: " + seed);
 		}
 	}
-		
+	
 	//Os testes de palavras não possuem uma condição para identificar que a palavra não foi escolhida porque assim
 	// fica possível evidenciar qual foi escolhida. Isto evita um falso negativo.
 	@Test

@@ -23,7 +23,7 @@ import embaralhador.EmbaralhadorShuffle;
 public class TesteEmbaralhadorShuffle {
 	
 	EmbaralhadorShuffle es;
-	BancoDePalavrasOld bp;
+	BancoDePalavras bp;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -36,7 +36,7 @@ public class TesteEmbaralhadorShuffle {
 	@Before
 	public void setUp() throws Exception {
 		es = new EmbaralhadorShuffle();
-		bp = new BancoDePalavrasOld();
+		bp = new BancoDePalavras();
 	}
 
 	@After
@@ -46,7 +46,7 @@ public class TesteEmbaralhadorShuffle {
 	@Test
 	public void palavrasEmbaralhadas() {
 		for (int i = 0; i < 50; i++) {
-			for (String p : bp.getBancoDePalavras()) {
+			for (String p : bp.getBancoDePalavras("frutas.txt")) {
 				p = p.toUpperCase();
 				String palavraEmbaralhada = es.getPalavraEmbaralhada(p);
 				//System.out.println("palavra: " + p + ", embaralhada: " + palavraEmbaralhada);

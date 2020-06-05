@@ -25,7 +25,7 @@ public class BancoDePalavras {
 	private List<String[]> lista = new ArrayList<>(); 
 	private String[] bancoDePalavras;
 	
-	private String[] palavrasDoArquivo(String file) {
+	protected String[] palavrasDoArquivo(String file) {
 		try {
 
 			FileReader fr = new FileReader(file);
@@ -34,12 +34,13 @@ public class BancoDePalavras {
             String str;
             while((str = br.readLine()) != null){
                 lista.add(str.split(","));
-            } 
-			br.close();
 
+            } 
+    		
+            br.close();
+            
 		} catch(IOException e) {
-			bancoDePalavras[0] = "Arquivo não encontrado!";
-			System.out.println(bancoDePalavras[0].toString());
+			System.out.println("Arquivo não encontrado!");
 			
 		}
 		
@@ -48,19 +49,26 @@ public class BancoDePalavras {
 		for (String[] s : lista) {
 			bancoDePalavras = s;
 			
-			//System.out.println(b.length);
+			System.out.println(bancoDePalavras.length);
 
-			//System.out.println(b[0]);	
-			//System.out.println(b[1]);
-			//System.out.println(b[5]);
+			//System.out.println(bancoDePalavras[0]);	
+			//System.out.println(bancoDePalavras[1]);
+			//System.out.println(bancoDePalavras[5]);
 			
 			//System.out.println(Arrays.deepToString(s));
 			
 		}
-		for (int i = 0; i < bancoDePalavras.length; i++) {
-			bancoDePalavras[i] = bancoDePalavras[i].replaceAll("\"","");
+		System.out.println(bancoDePalavras != null);
+		if (bancoDePalavras != null) {
+			System.out.println("notNull");
+			for (int i = 0; i < bancoDePalavras.length; i++) {
+				bancoDePalavras[i] = bancoDePalavras[i].replaceAll("\"","");
+				//System.out.println(bancoDePalavras[i]);
+			}
+		
 		}
 		//lista.forEach(a -> System.out.println(a));  
+		//System.out.println(bancoDePalavras.toString());
 		return bancoDePalavras;     
 	}
 
@@ -93,7 +101,7 @@ public class BancoDePalavras {
 		
 		String palavra = new String(); //This returns a new object and doesn't affect the original object
 		palavra = bancoDePalavras[indice]; //This gets the word with the aleatory indice
-		//System.out.println(indice + ", " + palavra.toUpperCase());
+		System.out.println(indice + ", " + palavra.toUpperCase());
 		
 		return palavra.toUpperCase(); //The upper case was chosen as a pattern
 	}

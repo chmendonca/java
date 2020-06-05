@@ -31,7 +31,7 @@ import org.junit.Test;
 public class TesteEmbaralhadorSequencial {
 	
 	EmbaralhadorSequencial es;
-	BancoDePalavrasOld bp;
+	BancoDePalavras bp;
 	StringBuilder builder;
 
 	@BeforeClass
@@ -45,7 +45,7 @@ public class TesteEmbaralhadorSequencial {
 	@Before
 	public void setUp() throws Exception {
 		es = new EmbaralhadorSequencial();
-		bp = new BancoDePalavrasOld();
+		bp = new BancoDePalavras();
 	}
 
 	@After
@@ -93,7 +93,7 @@ public class TesteEmbaralhadorSequencial {
 		
 	@Test
 	public void testeDeDissimilaridade() {
-		for (String p : bp.getBancoDePalavras()) {			
+		for (String p : bp.getBancoDePalavras("frutas.txt")) {			
 			p = p.toUpperCase();
 			assertEquals(chamadaDoEmbaralhadorSequencial(p),embaralhadorDissimilar(p));
 		}

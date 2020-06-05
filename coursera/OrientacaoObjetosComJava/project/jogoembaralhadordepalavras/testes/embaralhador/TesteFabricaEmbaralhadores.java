@@ -22,8 +22,6 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import embaralhador.FabricaEmbaralhadores;
-
 public class TesteFabricaEmbaralhadores {
 	
 	FabricaEmbaralhadores fe;
