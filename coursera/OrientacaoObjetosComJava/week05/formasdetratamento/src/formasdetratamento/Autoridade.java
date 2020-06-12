@@ -10,34 +10,19 @@
 
 package formasdetratamento;
 
-public class Autoridade implements FormatadorNome{
+public class Autoridade {
 	
 	private String nome;
 	private String sobrenome;
-	private String tratamento;
+	private FormatadorNome formatador;
 	
-	public Autoridade(String nome, String sobrenome, String tratamento) {
+	public Autoridade(String nome, String sobrenome, FormatadorNome formatador) {
 		this.nome = nome;
 		this.sobrenome = sobrenome;
-		this.tratamento = tratamento;
+		this.formatador = formatador;
 	}
-
-	public String formatarNome(String nome, String sobrenome) {
-		if (this.tratamento == "Informal") {
-			return this.nome;
-		} else if (this.tratamento == "masculino") {
-			return "Sr. " + this.sobrenome;
-		} else if (this.tratamento == "feminino"){
-			return "Sra. " + this.sobrenome;
-		} else {
-			return this.tratamento + " " + this.nome + " " + this.sobrenome;
-		}
-	}
-
+	
 	public String getTratamento(){
-		FormatadorNome fn = new Autoridade(this.nome,this.sobrenome,this.tratamento);
-		String autoridade = fn.formatarNome(this.nome, this.sobrenome);
-		System.out.println(autoridade);
-		return autoridade;
+		return this.formatador.formatarNome(this.nome, this.sobrenome);
 	}
 }

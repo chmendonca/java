@@ -18,25 +18,29 @@ public class TestAutoridade {
 	
 	@Test
 	public void informal() {
-		Autoridade a = new Autoridade("CASSIO", "MENDONCA","Informal");
+		Informal i = new Informal();
+		Autoridade a = new Autoridade("CASSIO", "MENDONCA",i);
 		assertEquals("CASSIO",a.getTratamento());
 	}
 
 	@Test
 	public void masculino() {
-		Autoridade a = new Autoridade("CASSIO", "MENDONCA","masculino");
+		Respeitoso r = new Respeitoso("masculino");
+		Autoridade a = new Autoridade("CASSIO", "MENDONCA",r);
 		assertEquals("Sr. MENDONCA",a.getTratamento());
 	}
 
 	@Test
 	public void feminino() {
-		Autoridade a = new Autoridade("DANIELA", "MENDONCA","feminino");
+		Respeitoso r = new Respeitoso("feminino");
+		Autoridade a = new Autoridade("DANIELA", "MENDONCA",r);
 		assertEquals("Sra. MENDONCA",a.getTratamento());
 	}
 
 	@Test
 	public void magnifico() {
-		Autoridade a = new Autoridade("CASSIO", "MENDONCA","Magnifico");
+		ComTitulo ct = new ComTitulo("Magnifico");
+		Autoridade a = new Autoridade("CASSIO", "MENDONCA",ct);
 		assertEquals("Magnifico CASSIO MENDONCA",a.getTratamento());
 	}
 
